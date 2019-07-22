@@ -1,0 +1,33 @@
+.button{
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Black";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1,#2A5058);
+    -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.6),5,0.0,0,1);
+}
+
+/*
+鼠标覆盖按钮效果*/
+.button:hover{
+    /*粗体*/
+    -fx-font-weight: bold;
+    /*透明度*/
+    -fx-opacity: 0.8;
+    -fx-background-color: linear-gradient(#2A5058,#61a2b1);
+    -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.6),5,0.0,0,1);
+}
+
+
+/*边框圆角按钮*/
+.button{
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+
+#label{
+    -fx-font-size: 32px;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill:#61a2b1;
+    -fx-effect: innershadow(three-pass-box,rgba(0,0,0,0.7),6,0.0,0,2);
+}
