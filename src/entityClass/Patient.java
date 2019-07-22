@@ -1,8 +1,9 @@
 package entityClass;
 
+import java.util.Date;
+import java.util.HashMap;
+
 public class Patient {
-
-
     //姓名（必填）
     private String name;
 
@@ -27,6 +28,9 @@ public class Patient {
     //年龄（必填）
     private int age;
 
+    //出生日期
+    private Date birthday;
+
     //身份证号（选填）
     private String idNumber;
 
@@ -39,6 +43,19 @@ public class Patient {
     //应收金额（由系统根据挂号的级别及看诊医生，是否要病历本，自动算出）
     private double amountDue;
 
+    //是否挂号
+    private boolean isRegistered;
+
+    //是否付费
+    private boolean isPaid;
+
+    //新建一个Hashmao用来通过病历号访问病人
+    protected HashMap<Integer, Patient> map=new HashMap<>();
+
+    //通过病历号去查找一个病人
+    public Patient getPatientByCaseNumber(int caseNumber){
+        return map.get(caseNumber);
+    }
     public String getName() {
         return name;
     }
@@ -135,12 +152,4 @@ public class Patient {
         this.amountDue = amountDue;
     }
 
-
-    //判断病人是否已经挂过号
-    public boolean isRegisterd() {
-        if (caseNumber == 0) {
-            return false;
-        } else
-            return true;
-    }
 }
