@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GhyController">
+    <children>
+      <Label fx:id="information" layoutX="243.0" layoutY="66.0" text="挂号信息">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="age" layoutX="267.0" layoutY="200.0" text="*年龄：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.1724137931034483" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="moneyShouldBePaid" layoutX="262.0" layoutY="388.0" text="*应收金额：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.09359605911330049" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="typesOfpaying" layoutX="617.0" layoutY="261.0" text="*结算类别：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.08866995073891627" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="address" layoutX="262.0" layoutY="261.0" text="家庭住址：" />
+      <Label fx:id="registrationLevel" layoutX="258.0" layoutY="322.0" text="*挂号级别：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.08866995073891627" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="medicalRecordbooklet" layoutX="967.0" layoutY="321.0" text="病历本：" />
+      <Label fx:id="birthday" layoutX="606.0" layoutY="200.0" text="出生日期：" />
+      <Label fx:id="name" layoutX="633.0" layoutY="138.0" text="*姓名：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.1330049261083744" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="registeredDepartments" layoutX="965.0" layoutY="261.0" text="*挂号科室：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.08866995073891627" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="doctor" layoutX="619.0" layoutY="322.0" text="*看诊医生：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.08866995073891627" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="idNumber" layoutX="954.0" layoutY="200.0" text="身份证号：" />
+      <Label fx:id="gender" layoutX="965.0" layoutY="138.0" text="*性别：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.1724137931034483" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="TextName" layoutX="705.0" layoutY="132.0" />
+      <TextField fx:id="TextGender" layoutX="1019.0" layoutY="132.0" />
+      <TextField fx:id="TextAge" layoutX="354.0" layoutY="194.0" />
+      <TextField fx:id="TextAddress" layoutX="354.0" layoutY="255.0" />
+      <TextField fx:id="TextIdNumber" layoutX="1051.0" layoutY="194.0" />
+      <TextField fx:id="TextMoneyShouldBePaid" layoutX="354.0" layoutY="382.0" />
+      <DatePicker fx:id="PickBirthday" layoutX="700.0" layoutY="194.0" prefHeight="36.0" prefWidth="242.0" />
+      <ChoiceBox fx:id="ChooseTypesOfpaying" layoutX="711.0" layoutY="255.0" prefHeight="36.0" prefWidth="204.0" />
+      <ChoiceBox fx:id="ChooseRegisteredDepartments" layoutX="1055.0" layoutY="255.0" prefHeight="36.0" prefWidth="204.0" />
+      <ChoiceBox fx:id="ChooseRegistrationLevel" layoutX="359.0" layoutY="316.0" prefHeight="36.0" prefWidth="204.0" />
+      <ChoiceBox fx:id="ChooseDoctor" layoutX="720.0" layoutY="316.0" onMouseClicked="#chooseDocter" prefHeight="36.0" prefWidth="204.0" />
+      <Pane fx:id="pane" prefHeight="50.0" prefWidth="1400.0">
+         <children>
+              <Label id="title" fx:id="title" layoutX="14.0" layoutY="9.0" prefHeight="24.0" prefWidth="600" text="东软云医院HIS系统" textFill="WHITE">
+                  <font>
+                      <Font size="30.0" />
+                  </font>
+              </Label>
+         </children>
+      </Pane>
+      <TextField fx:id="TextCaseNumber" layoutX="354.0" layoutY="132.0" />
+      <Label fx:id="caseNumber" layoutX="267.0" layoutY="138.0" text="*病历号：">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.09359605911330049" startY="0.059113300492610835">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="BLACK" offset="0.03488372093023256" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Button fx:id="gh" layoutX="367.0" layoutY="66.0" mnemonicParsing="false" onAction="#actionRegister" text="挂号" />
+      <Button fx:id="qk" layoutX="489.0" layoutY="66.0" mnemonicParsing="false" onAction="#actionPerformed" text="清空" />
+      <CheckBox fx:id="CheckMedicalRecordbooklet" layoutX="1039.0" layoutY="322.0" mnemonicParsing="false" text="是否需要" />
+      <Label fx:id="TopTip" layoutX="606.0" layoutY="63.0" prefHeight="39.0" prefWidth="257.0" text="欢迎！" textFill="#03b27b" />
+      <MenuButton fx:id="Menu" layoutY="73.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="220.0" text="挂号收费">
+        <items>
+          <MenuItem mnemonicParsing="false" text="现场挂号" />
+          <MenuItem mnemonicParsing="false" text="退号" />
+          <MenuItem mnemonicParsing="false" text="收费" />
+          <MenuItem mnemonicParsing="false" text="退费" />
+        </items>
+      </MenuButton>
+      <Button fx:id="calculatePay" layoutX="610.0" layoutY="382.0" mnemonicParsing="false" onAction="#actionCalculatePay" text="结算" />
+    </children>
+</AnchorPane>

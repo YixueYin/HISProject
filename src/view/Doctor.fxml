@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DoctorController">
+    <children>
+        <Pane fx:id="pane" prefHeight="50.0" prefWidth="1400.0">
+            <children>
+                <Label id="title" fx:id="title" layoutX="14.0" layoutY="9.0" prefHeight="24.0" prefWidth="600" text="东软云医院HIS系统" textFill="WHITE">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+      <MenuButton fx:id="sideMenu" layoutY="50.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="164.0" text="门诊医生">
+        <items>
+          <MenuItem mnemonicParsing="false" text="门诊病历" />
+          <MenuItem mnemonicParsing="false" text="医技模板管理" />
+          <MenuItem mnemonicParsing="false" text="西药处方模板" />
+        </items>
+      </MenuButton>
+      <AnchorPane layoutX="164.0" layoutY="50.0" prefHeight="743.0" prefWidth="1169.0">
+         <children>
+            <Label fx:id="NotYetPatient" layoutX="-2.0" layoutY="2.0" prefHeight="27.0" prefWidth="231.0" text="未诊患者" />
+            <Label fx:id="AlreadyPatient" layoutX="-2.0" layoutY="302.0" prefHeight="27.0" prefWidth="222.0" text="已诊患者" />
+            <Label layoutX="231.0" layoutY="4.0" prefHeight="27.0" prefWidth="117.0" text="成药处方" />
+            <Button fx:id="addPrescription" layoutX="348.0" layoutY="11.0" mnemonicParsing="false" onAction="#pressAddPrescription" text="增方" />
+            <Button fx:id="deletePrescription" layoutX="460.0" layoutY="11.0" mnemonicParsing="false" text="删方" />
+            <Button fx:id="openPrescription" layoutX="574.0" layoutY="11.0" mnemonicParsing="false" text="开立" />
+            <Button fx:id="cancellation" layoutX="684.0" layoutY="11.0" mnemonicParsing="false" text="作废" />
+            <AnchorPane layoutX="231.0" layoutY="60.0" prefHeight="211.0" prefWidth="299.0">
+               <children>
+                  <Label fx:id="" layoutX="107.0" layoutY="2.0" text="门诊处方" />
+                  <TableView fx:id="outpatientPrescription" layoutY="27.0" prefHeight="188.0" prefWidth="299.0">
+                    <columns>
+                      <TableColumn fx:id="prescriptionName" prefWidth="150.0" text="名称" />
+                      <TableColumn fx:id="prescriptionState" prefWidth="148.0" text="状态" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="232.0" layoutY="281.0" prefHeight="325.0" prefWidth="547.0">
+               <children>
+                  <TableView fx:id="drugDetail" layoutY="57.0" prefHeight="239.0" prefWidth="547.0">
+                    <columns>
+                      <TableColumn fx:id="drugName" prefWidth="108.0" text="药品名称" />
+                      <TableColumn fx:id="drugSpecification" prefWidth="118.0" text="规格" />
+                        <TableColumn fx:id="drugUnit" prefWidth="114.0" text="包装单位" />
+                        <TableColumn fx:id="usage" prefWidth="89.0" text="用法" />
+                        <TableColumn fx:id="dosage" prefWidth="69.0" text="用量" />
+                        <TableColumn fx:id="value" prefWidth="47.0" text="单价" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="251.0" layoutY="33.0" text="药品明细" />
+                  <TextField fx:id="txtAddName" layoutX="309.0" layoutY="-10.0" prefHeight="36.0" prefWidth="182.0" promptText="药品名称" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="addDrug" layoutX="905.0" layoutY="272.0" mnemonicParsing="false" onAction="#addMedicine" text="增药" />
+            <TableView fx:id="choiceDrug" layoutX="540.0" layoutY="84.0" prefHeight="188.0" prefWidth="425.0">
+               <columns>
+                  <TableColumn fx:id="choiceDrugName" prefWidth="211.0" text="已选药品" />
+                  <TableColumn fx:id="choiceDrugNumber" prefWidth="213.0" text="数量" />
+               </columns>
+            </TableView>
+            <Label fx:id="drugList" layoutX="716.0" layoutY="60.0" text="药品清单" />
+            <TextField fx:id="txtAddNumber" layoutX="732.0" layoutY="271.0" prefHeight="36.0" prefWidth="173.0" promptText="药品数量" />
+            <TableView fx:id="notYetPatient" layoutY="31.0" prefHeight="245.0" prefWidth="231.0">
+              <columns>
+                <TableColumn fx:id="notYetName" prefWidth="116.00003051757812" text="姓名" />
+                <TableColumn fx:id="notYetAge" prefWidth="114.0" text="年龄" />
+              </columns>
+            </TableView>
+            <TableView fx:id="alreadyPatient" layoutX="-2.0" layoutY="329.0" prefHeight="245.0" prefWidth="234.0">
+               <columns>
+                  <TableColumn fx:id="alreadyName" prefWidth="116.00003051757812" text="姓名" />
+                  <TableColumn fx:id="alreadyAge" prefWidth="116.00003051757812" text="年龄" />
+               </columns>
+            </TableView>
+            <Button fx:id="reception" layoutX="171.0" layoutY="293.0" mnemonicParsing="false" onAction="#pressReceptionButton" text="接诊" />
+            <Label fx:id="hint" layoutX="92.0" layoutY="303.0" textFill="#03b27b"/>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

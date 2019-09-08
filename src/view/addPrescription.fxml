@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPrescriptionController">
+   <children>
+      <Button fx:id="confirm" layoutX="264.0" layoutY="289.0" mnemonicParsing="false" onAction="#pressConfirm" text="确定" />
+      <Label fx:id="tip" layoutX="48.0" layoutY="60.0" prefHeight="28.0" prefWidth="76.0" text="增方">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddPrescription" layoutX="48.0" layoutY="148.0" prefHeight="25.0" prefWidth="478.0" promptText="输入处方名称（默认：新增处方）" />
+      <Label fx:id="hit" layoutX="141.0" layoutY="64.0" />
+   </children>
+</AnchorPane>

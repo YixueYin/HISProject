@@ -1,41 +1,40 @@
 package entityClass;
 
-import java.util.Date;
-import java.util.HashMap;
+import java.io.Serializable;
+import java.time.LocalDate;
 
-public class Patient {
+public class Patient implements Serializable {
+    public Patient(){}
+
     //姓名（必填）
     private String name;
-
     //性别（必填）
     private String gender;
-
     //家庭住址（选填）
     private String address;
 
     //结算类别（必填）
-    private String typesOfClosingAccounts;
+    private String typesOfPaying;
 
     //挂号级别（必填）
     private String registrationLevel;
 
     //挂号科室（必填）
-    private String registeredDepartments;
+    private Department registeredDepartments;
 
     //看诊医生（必填）
-    private String doctor;
+    private Doctor doctor;
 
     //年龄（必填）
     private int age;
-
     //出生日期
-    private Date birthday;
+    private LocalDate birthday;
 
     //身份证号（选填）
     private String idNumber;
 
     //病历号（自动生成）（必填）
-    private int caseNumber;
+    private String caseNumber;
 
     //病历本（如要单独收费1元）
     private boolean medicalRecordbooklet;
@@ -49,13 +48,14 @@ public class Patient {
     //是否付费
     private boolean isPaid;
 
-    //新建一个Hashmao用来通过病历号访问病人
-    protected HashMap<Integer, Patient> map=new HashMap<>();
+    //是否被诊断
+    private boolean isDiagnosed;
 
-    //通过病历号去查找一个病人
-    public Patient getPatientByCaseNumber(int caseNumber){
-        return map.get(caseNumber);
+    public Patient(String name, String gender) {
+        this.name = name;
+        this.gender = gender;
     }
+
     public String getName() {
         return name;
     }
@@ -63,6 +63,7 @@ public class Patient {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getGender() {
         return gender;
@@ -76,17 +77,52 @@ public class Patient {
         return address;
     }
 
+
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+
+
+    public boolean isDiagnosed() {
+        return isDiagnosed;
+    }
+
+    public void setDiagnosed(boolean diagnosed) {
+        isDiagnosed = diagnosed;
+    }
+
+
+
+    public boolean isRegistered() {
+        if(isRegistered)
+            return true;
+        else
+            return false;
+    }
+
+    public void setRegistered(boolean registered) {
+        isRegistered = registered;
+    }
+
+    public boolean isPaid() {
+        return isPaid;
+    }
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
+    }
+
+
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getTypesOfClosingAccounts() {
-        return typesOfClosingAccounts;
-    }
-
-    public void setTypesOfClosingAccounts(String typesOfClosingAccounts) {
-        this.typesOfClosingAccounts = typesOfClosingAccounts;
-    }
 
     public String getRegistrationLevel() {
         return registrationLevel;
@@ -96,19 +132,19 @@ public class Patient {
         this.registrationLevel = registrationLevel;
     }
 
-    public String getRegisteredDepartments() {
-        return registeredDepartments;
+
+    public String getTypesOfPaying() {
+        return typesOfPaying;
     }
 
-    public void setRegisteredDepartments(String registeredDepartments) {
-        this.registeredDepartments = registeredDepartments;
+    public void setTypesOfPaying(String typesOfPaying) {
+        this.typesOfPaying = typesOfPaying;
     }
-
-    public String getDoctor() {
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(String doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
 
@@ -128,11 +164,11 @@ public class Patient {
         this.idNumber = idNumber;
     }
 
-    public int getCaseNumber() {
+    public String getCaseNumber() {
         return caseNumber;
     }
 
-    public void setCaseNumber(int caseNumber) {
+    public void setCaseNumber(String caseNumber) {
         this.caseNumber = caseNumber;
     }
 
@@ -150,6 +186,14 @@ public class Patient {
 
     public void setAmountDue(double amountDue) {
         this.amountDue = amountDue;
+    }
+
+    public Department getRegisteredDepartments() {
+        return registeredDepartments;
+    }
+
+    public void setRegisteredDepartments(Department registeredDepartments) {
+        this.registeredDepartments = registeredDepartments;
     }
 
 }

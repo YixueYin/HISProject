@@ -1,51 +1,22 @@
 package entityClass;
-//科室编码、科室名称、科室分类、科室类别
+
+
 public class Department {
+    private String name;
+    //医生
+    //科室和医生为一对多的关系
 
-    //科室编码
-    private String departmentId;
+    public Department(String name) { this.name = name; }
 
-    //科室名称
-    private String departmentName;
-
-    //科室分类
-    private String departmentClassification;
-
-    //科室类别
-    private String departmentCategory;
-
-
-
-    public String getDepartmentId() {
-        return departmentId;
+    public String getName() {
+        return name;
     }
 
-    public void setDepartmentId(String departmentId) {
-        this.departmentId = departmentId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String toString(){
+        return this.getName();
     }
-
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
-    }
-
-    public String getDepartmentClassification() {
-        return departmentClassification;
-    }
-
-    public void setDepartmentClassification(String departmentClassification) {
-        this.departmentClassification = departmentClassification;
-    }
-
-    public String getDepartmentCategory() {
-        return departmentCategory;
-    }
-
-    public void setDepartmentCategory(String departmentCategory) {
-        this.departmentCategory = departmentCategory;
-    }
-
 }

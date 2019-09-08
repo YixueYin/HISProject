@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,36 +21,28 @@ public class LoginController implements Initializable {
     private Label label;
 
     @FXML
-    private Label title;
-
-    @FXML
     private TextField username;
 
     @FXML
     private PasswordField password;
 
-    @FXML
-    private Pane pane;
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-
-    public void Login(ActionEvent event){
+    public void Login(ActionEvent event) {
         //打开管理员界面
-        if(username.getText().equals("root")&&password.getText().equals("root"))
-        {
-            Stage stage=new Stage();
+
+        if (username.getText().equals("root") && password.getText().equals("root")) {
+            Stage stage = new Stage();
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/sample/Root.fxml"));
+                root = FXMLLoader.load(getClass().getResource("../view/Root.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Scene scene=new Scene(root);
-            scene.getStylesheets().add(LoginController.class.getResource("/source/root.css").toExternalForm());
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(RootController.class.getResource("/source/root.css").toExternalForm());
             stage.setTitle("Root");
             stage.setScene(scene);
             stage.show();
@@ -59,40 +50,41 @@ public class LoginController implements Initializable {
             label.setText("Login Success");
 
 
-        }else if(username.getText().equals("ghy")&&password.getText().equals("ghy123"))
-        {
+        } else if (username.getText().equals("ghy") && password.getText().equals("ghy123")) {
             //打开挂号员界面
-            Stage stage=new Stage();
+            Stage stage = new Stage();
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/sample/Ghy.fxml"));
+                root = FXMLLoader.load(getClass().getResource("../view/Ghy.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(GhyController.class.getResource("../source/Ghy.css").toExternalForm());
             stage.setTitle("Ghy");
             stage.setScene(scene);
             stage.show();
             stage.setMaximized(true);
             label.setText("Login Success");
 
-        }else if(username.getText().equals("bianque")&&password.getText().equals("bianque123"))
-        {
+        } else if ((username.getText().equals("bianque") && password.getText().equals("bianque123"))||(username.getText().equals("wrj")&&password.getText().equals("wrj123"))||(username.getText().equals("xfs")&&password.getText().equals("xfs123"))) {
             //打开医生界面
-            Stage stage=new Stage();
+            Stage stage = new Stage();
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/sample/Doctor.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/view/Doctor.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(DoctorController.class.getResource("/source/doctor.css").toExternalForm());
             stage.setTitle("Doctor");
             stage.setScene(scene);
             stage.show();
             stage.setMaximized(true);
             label.setText("Login Success");
-        }else {
+
+        } else {
             label.setText("Login Failed");
         }
     }

@@ -1,6 +1,5 @@
 package controller;
 
-import controller.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,9 +10,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
         Scene scene = new Scene(root, 400, 300);
-        scene.getStylesheets().add(LoginController.class.getResource("/source/first.css").toExternalForm());
+        scene.getStylesheets().add(LoginController.class.getResource("/source/login.css").toExternalForm());
         primaryStage.setTitle("Welcome");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -21,7 +20,22 @@ public class Main extends Application {
     }
 
 
+
     public static void main(String[] args) {
+
+        //1.患者挂号
+
+        //2.医生开药
+
+        //3.患者缴费
+
+        //4.患者退号
+
+        //5.患者退费
+
+        //6.药房发药
+
         launch(args);
+
     }
 }

@@ -1,3 +1,7 @@
 #title{
-    -fx-background-color: linear-gradient(to right,#00fffc,#fff600);
+    -fx-font-weight: bold;
+}
+
+#pane{
+    -fx-background-color: #00E0ED;
 }

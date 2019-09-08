@@ -1,3 +1,19 @@
 #title{
-    -fx-background-color: linear-gradient(to right,#00fffc,#fff600);
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#information{
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+
+}
+
+#pane{
+    -fx-background-color: #00E0ED;
+}
+
+.menu-button{
+    -fx-font-size: 18;
+    -fx-text-fill: #000080;
 }

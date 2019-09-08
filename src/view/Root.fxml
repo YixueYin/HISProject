@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="800" prefWidth="1400" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RootController">
+   <Pane fx:id="pane" prefHeight="50.0" prefWidth="1400.0">
+      <children>
+         <Label id="title" fx:id="title" layoutX="14.0" layoutY="9.0" prefHeight="24.0" prefWidth="600" text="东软云医院HIS系统" textFill="WHITE">
+            <font>
+               <Font size="30.0" />
+            </font>
+         </Label>
+      </children>
+   </Pane>
+</AnchorPane>
