@@ -1,0 +1,1 @@
+{"doctor":{"name":"扁鹊"},"patient":{"address":"","age":19,"amountDue":21.0,"caseNumber":"20190908024338","diagnosed":true,"gender":"女","idNumber":"","medicalRecordbooklet":true,"name":"yyx","paid":false,"registered":true,"registrationLevel":"普通号","typesOfPaying":"支付宝"},"prescriptionList":[],"totalCost":0.0}
