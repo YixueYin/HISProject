@@ -14,6 +14,30 @@ public class Data implements Serializable {
     private static ArrayList<Doctor> doctors = new ArrayList<>();
     private static ArrayList<Registration> registrations = new ArrayList<>();
 
+    public static ArrayList<Patient> getPatients() {
+        return patients;
+    }
+
+    public static void setPatients(ArrayList<Patient> patients) {
+        Data.patients = patients;
+    }
+
+    public static ArrayList<Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public static void setDoctors(ArrayList<Doctor> doctors) {
+        Data.doctors = doctors;
+    }
+
+    public static ArrayList<Registration> getRegistrations() {
+        return registrations;
+    }
+
+    public static void setRegistrations(ArrayList<Registration> registrations) {
+        Data.registrations = registrations;
+    }
+
     public static void addPatient(Patient patient) {
         if (patient.isRegistered())
             System.out.println("该病人已存在");
@@ -95,8 +119,8 @@ public class Data implements Serializable {
 
     //将挂号信息写入文件
     //使用JSON写进文件
-    public static void writeRegistrationData(Registration r){
-        String objJson= JSON.toJSONString(r);
+    public static void writeRegistrationData(){
+        String objJson= JSON.toJSONString(registrations);
         try {
             FileWriter fw=new FileWriter("C:\\Users\\47583\\HISProject\\Registration.txt");
             BufferedWriter bw=new BufferedWriter(fw);
