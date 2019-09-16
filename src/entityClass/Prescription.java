@@ -1,17 +1,26 @@
 package entityClass;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Prescription {
-    private ArrayList<HashMap<Drug,Integer>> drugWithNumber=new ArrayList<>();
-    private ArrayList<Drug> drugs=new ArrayList<>();
+    public HashMap<String, Integer> getDrugWithNumber() {
+        return drugWithNumber;
+    }
+
+    private HashMap<String,Integer> drugWithNumber=new HashMap<>();
+
+    //private ArrayList<Drug> drugs=new ArrayList<>();
 
     public Prescription(String name,boolean isTemporary){
         this.name=new SimpleStringProperty(name);
-        this.isTemporary=true;
+        if(isTemporary)
+        {
+            this.isTemporarySP=new SimpleStringProperty("暂存");
+        }
     }
     //暂存
     private boolean isTemporary;
@@ -19,6 +28,31 @@ public class Prescription {
     private boolean isPaid;
     //开立
     private boolean isTaken;
+    //取药
+    private boolean isDeliver;
+
+    public boolean isDeliver() {
+        return isDeliver;
+    }
+
+    public void setDeliver(boolean deliver) {
+        isDeliver = deliver;
+    }
+
+    public String getIsTemporarySP() {
+        return isTemporarySP.get();
+    }
+
+    public StringProperty isTemporarySPProperty() {
+        return isTemporarySP;
+    }
+
+    public void setIsTemporarySP(String isTemporarySP) {
+        this.isTemporarySP.set(isTemporarySP);
+    }
+
+    private StringProperty isTemporarySP=new SimpleStringProperty();
+
     //处方名称
     private SimpleStringProperty name;
     public String getName() {
@@ -57,28 +91,6 @@ public class Prescription {
 
     public void setTaken(boolean taken) {
         isTaken = taken;
-    }
-
-    //给处方增药
-    public void addDrugToPrescription(Drug drug,int number){
-        HashMap<Drug,Integer> map=new HashMap<>();
-        map.put(drug,number);
-        drugWithNumber.add(map);
-        drugs.add(drug);
-    }
-
-    public void getNumberOfDrug(){
-        for(Drug drug:drugs){
-            for(HashMap<Drug,Integer> map:drugWithNumber){
-                drug.setNumber(map.get(drug));
-            }
-        }
-    }
-
-    public void removeDrug(Drug drug)
-    {
-        drugWithNumber.remove(drug);
-        drugs.remove(drug);
     }
 
 }
