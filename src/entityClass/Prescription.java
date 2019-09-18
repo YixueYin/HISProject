@@ -3,7 +3,6 @@ package entityClass;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Prescription {
@@ -12,8 +11,6 @@ public class Prescription {
     }
 
     private HashMap<String,Integer> drugWithNumber=new HashMap<>();
-
-    //private ArrayList<Drug> drugs=new ArrayList<>();
 
     public Prescription(String name,boolean isTemporary){
         this.name=new SimpleStringProperty(name);
